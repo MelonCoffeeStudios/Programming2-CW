@@ -3,7 +3,9 @@
  */
 import java.io.Serializable;
 
-public class Card implements Serializable{
+public class Card implements Serializable, Comparable<Card>{
+
+
 
     public enum Rank {
         TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE;
@@ -36,6 +38,22 @@ public class Card implements Serializable{
         }
     }
 
+    public Rank getRank() {
+        return rank;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public void setRank(Rank rank) {
+        this.rank = rank;
+    }
+
+    public void setSuit(Suit suit) {
+        this.suit = suit;
+    }
+
     public enum Suit {CLUB, DIAMOND, HEART, SPADE}
     Rank rank;
     Suit suit;
@@ -47,5 +65,11 @@ public class Card implements Serializable{
 
 
 
+
+
+    @Override
+    public int compareTo(Card o) {
+        return this.rank.compareTo(o.rank);
+    }
 
 }

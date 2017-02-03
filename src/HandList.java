@@ -26,6 +26,10 @@ public class HandList {
         }
     }
 
+    public Hand get(int index){
+        return hands.get(index);
+    }
+
     @Override
     public String toString(){
         StringBuilder str = new StringBuilder();

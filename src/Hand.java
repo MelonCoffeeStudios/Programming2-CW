@@ -140,10 +140,19 @@ public class Hand implements Serializable, Iterable<Card> {
         return h;
     }
 
+    public void sortAscending(){
+        Collections.sort(this.hand);
+
+    }
+
     public Hand sortDescending(Hand h){
         Collections.sort(h.hand, Collections.reverseOrder());
 
         return h;
+    }
+
+    public void sortDescending(){
+        Collections.sort(this.hand, Collections.reverseOrder());
     }
 
     public int countSuit(Card.Suit suit){
